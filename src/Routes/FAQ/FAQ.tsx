@@ -15,12 +15,12 @@ function Pergunta({ pergunta, resposta }: PerguntaProps) {
 
 export default function FAQ() {
   return (
-    <div className="p-6">
+    <div className="w-full min-h-screen bg-green-500 flex flex-col justify-center items-center px-4 py-8">
       <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">
         Perguntas Frequentes
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
         <Pergunta
           pergunta="Quem somos?"
           resposta="Somos um hospital referência no atendimento público e privado, dedicado a oferecer cuidado de qualidade, segurança e atenção humanizada a todos os pacientes"

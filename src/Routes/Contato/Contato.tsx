@@ -27,16 +27,18 @@ const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
 }
 
 return(
-    <div className="px-10 padding min-h-screen max-w 2xl m-auto my-7">
-        <h1 className="text-blue-900 text-4xl text-center font-bold mb-8"> Contate a equipe</h1>
+    <div className="w-full min-h-screen bg-green-500 flex flex-col justify-center items-center">
+        <div className="bg-white p-8 border-4 border-gray-500">
+            <h1 className="text-blue-900 text-4xl text-center font-bold mb-8"> Contate a equipe</h1>
 
-    <form className="border-2 border-gray-400 p-4 rounded-md" onSubmit={handleSubmit}>
-        <input className="border-2 border-gray-400 rounded-md p-2 w-full mb-2" type="text" name="nome" value={Contato.nome} placeholder="Nome" onChange={handleChange}></input>
-        <input className="border-2 border-gray-400 rounded-md p-2 w-full mb-2" type="text" name="email" value={Contato.email} placeholder="Email" onChange={handleChange}></input>
-        <input className="border-2 border-gray-400 rounded-md p-2 w-full mb-2" type="text" name="mensagem" value={Contato.mensagem} placeholder="Mensagem" onChange={handleChange}></input>
-        <button className="bg-green-700 text-white font-bold py-2 px-4 rounded-md mr-3" type="submit">Enviar</button>
-        <Link className="bg-red-700 text-white font-bold py-2 px-4 rounded-md" to={"/"}>Cancelar</Link>
-    </form>
+            <form className="border-2 border-gray-400 p-4 rounded-md" onSubmit={handleSubmit}>
+                <input className="border-2 border-gray-400 rounded-md p-2 w-full mb-2" type="text" name="nome" value={Contato.nome} placeholder="Nome" onChange={handleChange}></input>
+                <input className="border-2 border-gray-400 rounded-md p-2 w-full mb-2" type="text" name="email" value={Contato.email} placeholder="Email" onChange={handleChange}></input>
+                <input className="border-2 border-gray-400 rounded-md p-2 w-full mb-2" type="text" name="mensagem" value={Contato.mensagem} placeholder="Mensagem" onChange={handleChange}></input>
+                <button className="bg-green-700 text-white font-bold py-2 px-4 rounded-md mr-3" type="submit">Enviar</button>
+                <Link className="bg-red-700 text-white font-bold py-2 px-4 rounded-md" to={"/"}>Cancelar</Link>
+            </form>
+        </div>
     </div>
 
 )

@@ -7,7 +7,7 @@ import Home from './Routes/Home/Home.tsx'
 import Integrantes from './Routes/Integrantes/Integrantes.tsx'
 import Contato from './Routes/Contato/Contato.tsx'
 import FAQ from './Routes/FAQ/FAQ.tsx'
-import Error from './Routes/Error/Error.tsx'
+import Error from './Components/Error/Error.tsx'
 
 const router = createBrowserRouter([
   {
