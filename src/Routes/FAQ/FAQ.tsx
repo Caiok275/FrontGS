@@ -15,35 +15,35 @@ function Pergunta({ pergunta, resposta }: PerguntaProps) {
 
 export default function FAQ() {
   return (
-    <div className="w-full min-h-screen bg-green-500 flex flex-col justify-center items-center px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">
+    <div className="w-full min-h-screen bg-gradient-to-b from-green-500 to-white flex flex-col justify-center items-center px-4 py-8">
+      <h2 className="text-3xl font-bold text-center mb-8 text-green-900 gap-6">
         Perguntas Frequentes
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
         <Pergunta
-          pergunta="Quem somos?"
-          resposta="Somos um hospital referência no atendimento público e privado, dedicado a oferecer cuidado de qualidade, segurança e atenção humanizada a todos os pacientes"
+          pergunta="O que é o Turnos do Bem-Estar e como ele funciona na prática?"
+          resposta="O Turnos do Bem-Estar é uma plataforma que ajuda a monitorar e reduzir o nível de estresse no trabalho e no dia a dia. O usuário responde 5 perguntas rápidas sobre como está se sentindo, a IA analisa as respostas junto com nossa equipe humana e gera recomendações simples, como pausas, exercícios de respiração ou ajustes de rotina."
         />
         <Pergunta
-          pergunta="O hospital atende convênios?"
-          resposta="Sim, o Hospital das Clínicas atende diversos convênios e oferece suporte para agendamento de consultas e procedimentos."
+          pergunta="O Turnos do Bem-Estar substitui o trabalho do RH ou psicólogos?"
+          resposta="Não. A plataforma é um apoio, não um substituto. Ela ajuda a identificar sinais de estresse e sobrecarga mais cedo, fornecendo informações e recomendações que podem orientar ações do RH, gestores, família e quando necessário, encaminhamento para suporte especializado."
         />
         <Pergunta
-          pergunta="Onde fica localizado?"
-          resposta="O hospital está localizado na Av. Dr. Enéas de Carvalho Aguiar 255, Cerqueira César, São Paulo."
+          pergunta="Com que frequência eu preciso responder às perguntas?"
+          resposta="A recomendação é que o check-in seja feito uma vez por dia, levando menos de 2 minutos. Isso garante um acompanhamento contínuo e precisão nos relatórios mensais."
         />
         <Pergunta
           pergunta="Quais são os horários de atendimento?"
           resposta="O hospital funciona de segunda a sexta, das 7h às 19h, e aos sábados das 8h às 12h."
         />
         <Pergunta
-          pergunta="É possível agendar consultas de forma remota?"
-          resposta="Sim, oferecemos teleconsultas para algumas especialidades, permitindo atendimento remoto de forma segura e prática para os pacientes."
+          pergunta="Minha empresa pode aderir o sistema?"
+          resposta="Sim, oferecemos parcerias para empresas e lideranças acompanharem o estado físico e emocional de seus funcionários."
         />
         <Pergunta
-          pergunta="Como entrar em contato com o hospital?"
-          resposta="Você pode entrar em contato pelo telefone (11) 2661-0000 ou pelo e-mail contato@hospital.com.br."
+          pergunta="Como posso entrar em contato para mais informações?"
+          resposta="Você pode nos contatar através da página de Contato, onde encontrará um formulário para enviar suas dúvidas ou solicitar mais informações."
         />
       </div>
     </div>
