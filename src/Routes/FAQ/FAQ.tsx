@@ -6,7 +6,7 @@ type PerguntaProps = {
 
 function Pergunta({ pergunta, resposta }: PerguntaProps) {
   return (
-    <div className="border-4 border-blue-800 rounded-md p-6 bg-white">
+    <div className="border-4 border-blue-800   rounded-md p-6 bg-white">
       <h1 className="text-center text-xl font-bold text-gray-800 mb-2">{pergunta}</h1>
       <p className="text-center text-gray-600">{resposta}</p>
     </div>

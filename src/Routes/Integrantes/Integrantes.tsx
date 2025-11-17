@@ -15,7 +15,7 @@ export default function Integrantes() {
           <img src={imgCaio} alt="foto caio" className="w-32 h-32 object-cover rounded-md mb-4 border-2 border-gray-500"
           />
           <h3 className="text-lg font-bold text-black">Caio Kenzo Tayra</h3>
-          <p className="text-sm text-gray-600">RM: 562979 1</p>
+          <p className="text-sm text-gray-600">RM: 562979</p>
           <p className="text-sm text-gray-600">Turma: 1TDSPI</p>
         </div>
 
