@@ -9,6 +9,7 @@ import Contato from './Routes/Contato/Contato.tsx'
 import FAQ from './Routes/FAQ/FAQ.tsx'
 import Error from './Components/Error/Error.tsx'
 import Sobre from './Routes/Sobre/Sobre.tsx'
+import { ProviderTema } from './context/TemaContext.tsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <ProviderTema>
+      <RouterProvider router={router}/>
+    </ProviderTema>
   </StrictMode>,
 )
