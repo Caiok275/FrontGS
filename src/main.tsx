@@ -8,6 +8,7 @@ import Integrantes from './Routes/Integrantes/Integrantes.tsx'
 import Contato from './Routes/Contato/Contato.tsx'
 import FAQ from './Routes/FAQ/FAQ.tsx'
 import Error from './Components/Error/Error.tsx'
+import Sobre from './Routes/Sobre/Sobre.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/Contato", element: <Contato /> },
       { path: "/FAQ", element: <FAQ /> },
       { path: "/Integrantes", element: <Integrantes /> },
+      { path: "/Sobre", element: <Sobre /> },
     ],
   },
 ]);

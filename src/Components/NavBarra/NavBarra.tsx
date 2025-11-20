@@ -11,6 +11,7 @@ export default function NavBarra() {
                     <Link to="/integrantes" className="hover:underline hover:underline-offset-4">Integrantes</Link>
                     <Link to="/faq" className="hover:underline hover:underline-offset-4">FAQ</Link>
                     <Link to="/contato" className="hover:underline hover:underline-offset-4">Contato</Link>
+                    <Link to="/sobre" className="hover:underline hover:underline-offset-4">Sobre</Link>
                 </nav>
                 
                 <button className="flex gap-4">
