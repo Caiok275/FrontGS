@@ -1,7 +1,7 @@
 export default function Sobre() {
     return (
-        <div className="w-full min-h-screen bg-linear-to-b from-green-500 to-white flex flex-col justify-center items-center">
-            <div className="max-w-3xl text-center">
+        <div className="w-full min-h-screen bg-gray-200 flex flex-col justify-center items-center">
+            <div className="max-w-3xl bg-white shadow-lg border-4 border-blue-800 rounded-xl text-center">
                 <h1 className="text-3xl font-bold text-center mb-6 text-blue-900">
                     Sobre a iniciativa Bem-Estar - Um futuro saudável começa com o cuidado de hoje
                 </h1>
