@@ -15,8 +15,8 @@ function Pergunta({ pergunta, resposta }: PerguntaProps) {
 
 export default function FAQ() {
   return (
-    <div className="w-full min-h-screen bg-linear-to-b from-green-500 to-white flex flex-col justify-center items-center px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8 text-green-900 gap-6">
+    <div className="w-full min-h-screen bg-gray-200 flex flex-col justify-center items-center px-4 py-8">
+      <h2 className="text-3xl font-bold text-center mb-8 text-blue-900 gap-6">
         Perguntas Frequentes
       </h2>
 

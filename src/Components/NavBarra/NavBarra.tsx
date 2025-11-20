@@ -6,12 +6,12 @@ export default function NavBarra() {
             <header className="fixed top-0 left-0 w-full flex justify-between items-center py-5 bg-transparent z-100">
                 <Link to="/" className="text-5xl text-white">Logo</Link>
 
-                <nav className="flex gap-8 text-2xl text-white">
+                <nav className="flex gap-8 text-2xl text-blue-900">
                     <Link to="/" className="hover:underline hover:underline-offset-4">Home</Link>
+                    <Link to="/sobre" className="hover:underline hover:underline-offset-4">Sobre</Link>
                     <Link to="/integrantes" className="hover:underline hover:underline-offset-4">Integrantes</Link>
                     <Link to="/faq" className="hover:underline hover:underline-offset-4">FAQ</Link>
                     <Link to="/contato" className="hover:underline hover:underline-offset-4">Contato</Link>
-                    <Link to="/sobre" className="hover:underline hover:underline-offset-4">Sobre</Link>
                 </nav>
                 
                 <button className="flex gap-4">

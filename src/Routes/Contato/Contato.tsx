@@ -35,9 +35,9 @@ const handleChange = (e: ChangeEvent) => {
 
   return (
 
-    <div className="w-full min-h-screen bg-gradient-to-b from-green-500 to-white flex flex-col justify-center items-center p-4 "> 
+    <div className="w-full min-h-screen bg-gray-200 flex flex-col justify-center items-center p-4 "> 
       <div className="bg-white p-8 border-4 border-gray-500 rounded-lg w-full max-w-md">
-        <h1 className="text-green-700 text-4xl text-center font-bold mb-8">
+        <h1 className="text-blue-900 text-4xl text-center font-bold mb-8">
           Contate a equipe
         </h1>
 
