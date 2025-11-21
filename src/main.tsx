@@ -11,6 +11,7 @@ import Error from './Components/Error/Error.tsx'
 import Sobre from './Routes/Sobre/Sobre.tsx'
 import { ProviderTema } from './context/TemaContext.tsx'
 import Login from './Routes/Login/Login.tsx'
+import Registrar from "./Routes/Registrar/Registrar";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: "/Integrantes", element: <Integrantes /> },
       { path: "/Sobre", element: <Sobre /> },
       { path: "/Login", element: <Login /> },
+      { path: "/Registrar", element: <Registrar /> },
     ],
   },
 ]);
