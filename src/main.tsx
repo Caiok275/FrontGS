@@ -10,6 +10,7 @@ import FAQ from './Routes/FAQ/FAQ.tsx'
 import Error from './Components/Error/Error.tsx'
 import Sobre from './Routes/Sobre/Sobre.tsx'
 import { ProviderTema } from './context/TemaContext.tsx'
+import Login from './Routes/Login/Login.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/FAQ", element: <FAQ /> },
       { path: "/Integrantes", element: <Integrantes /> },
       { path: "/Sobre", element: <Sobre /> },
+      { path: "/Login", element: <Login /> },
     ],
   },
 ]);
