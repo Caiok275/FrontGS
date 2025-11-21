@@ -1,24 +1,54 @@
-import { Link } from 'react-router-dom';
-import logo from '../../assets/logo-turnos-bem.png';
+import { Link } from "react-router-dom";
+import { useTema } from "../../context/TemaContext";
+import BotaoTema from "../BotaoTema/BotaoTema";
+import logo from "../../assets/logo-turnos-bem.png";
 
 export default function NavBarra() {
-    return (
-        <div>
-            <header className="fixed top-0 left-0 w-full flex justify-between items-center py-5 bg-transparent z-100">
-                <Link to="/"><img src={logo} alt="Logo Turnos Bem" className="h-18" /></Link>
+  const { tema } = useTema();
 
-                <nav className="flex gap-8 text-2xl text-white">
-                    <Link to="/" className="hover:underline hover:underline-offset-4">Home</Link>
-                    <Link to="/integrantes" className="hover:underline hover:underline-offset-4">Integrantes</Link>
-                    <Link to="/faq" className="hover:underline hover:underline-offset-4">FAQ</Link>
-                    <Link to="/contato" className="hover:underline hover:underline-offset-4">Contato</Link>
-                </nav>
-                
-                <button className="flex gap-4">
-                    <Link to="/login" className="text-2xl px-4 py-3 text-white bg-red-600 rounded hover:bg-red-700">Login</Link>
-                    <Link to="/registrar" className="text-2xl px-4 py-3 text-white bg-green-600 rounded hover:bg-green-700">Registrar</Link>
-                </button>
-            </header>
-        </div>
-    );
+  return (
+    <header
+      className={
+        tema === "claro"
+          ? "fixed top-0 left-0 w-full flex items-center justify-between px-8 py-4 bg-white shadow-md z-50 text-black"
+          : "fixed top-0 left-0 w-full flex items-center justify-between px-8 py-4 bg-gray-900 shadow-md z-50 text-white"
+      }
+    >
+      <Link to="/" className="flex items-center">
+        <img src={logo} alt="Logo Turnos Bem" className="h-12" />
+      </Link>
+
+      <nav
+        className={
+          tema === "claro"
+            ? "flex gap-10 text-lg font-semibold text-blue-900 items-center"
+            : "flex gap-10 text-lg font-semibold text-white items-center"
+        }
+      >
+        <Link to="/" className="hover:opacity-70 transition">Home</Link>
+        <Link to="/sobre" className="hover:opacity-70 transition">Sobre</Link>
+        <Link to="/integrantes" className="hover:opacity-70 transition">Integrantes</Link>
+        <Link to="/faq" className="hover:opacity-70 transition">FAQ</Link>
+        <Link to="/contato" className="hover:opacity-70 transition">Contato</Link>
+      </nav>
+
+      <div className="flex items-center gap-3">
+        <BotaoTema />
+
+        <Link
+          to="/login"
+          className="text-lg px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition"
+        >
+          Login
+        </Link>
+
+        <Link
+          to="/registrar"
+          className="text-lg px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 transition"
+        >
+          Registrar
+        </Link>
+      </div>
+    </header>
+  );
 }
