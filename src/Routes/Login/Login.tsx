@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useTema } from "../../context/TemaContext";
+import { useAuth } from "../../context/AuthContext"; 
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const { tema } = useTema();
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     email: "",
@@ -15,7 +19,17 @@ export default function Login() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    alert("Login enviado!");
+
+    if (form.email === "" || form.senha === "") {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    login({ email: form.email });
+
+    alert("Login realizado com sucesso!");
+
+    navigate("/formulario"); 
   }
 
   return (
@@ -76,7 +90,6 @@ export default function Login() {
           >
             Entrar
           </button>
-
         </form>
       </div>
     </div>

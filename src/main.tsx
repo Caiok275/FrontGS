@@ -1,19 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
-import './index.css'
-import App from './App.tsx'
-import Home from './Routes/Home/Home.tsx'
-import Integrantes from './Routes/Integrantes/Integrantes.tsx'
-import Contato from './Routes/Contato/Contato.tsx'
-import FAQ from './Routes/FAQ/FAQ.tsx'
-import Error from './Components/Error/Error.tsx'
-import Sobre from './Routes/Sobre/Sobre.tsx'
-import { ProviderTema } from './context/TemaContext.tsx'
-import Login from './Routes/Login/Login.tsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import './index.css';
+import App from './App.tsx';
+import Home from './Routes/Home/Home.tsx';
+import Integrantes from './Routes/Integrantes/Integrantes.tsx';
+import Contato from './Routes/Contato/Contato.tsx';
+import FAQ from './Routes/FAQ/FAQ.tsx';
+import Error from './Components/Error/Error.tsx';
+import Sobre from './Routes/Sobre/Sobre.tsx';
+import { ProviderTema } from './context/TemaContext.tsx';
+import Login from './Routes/Login/Login.tsx';
 import Registrar from "./Routes/Registrar/Registrar";
 import Formulario from "./Routes/Formulario/Formulario";
-
+import ProtectedRoute from "./Components/RotaProtegida/RotaProtegida.tsx";
+import { AuthProvider } from "./context/AuthContext";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <Error />,
     children: [
-      { index: true, element: <Navigate to="/Home" /> }, // <--- redirecionamento
+      { index: true, element: <Navigate to="/Home" /> },
       { path: "/Home", element: <Home /> },
       { path: "/Contato", element: <Contato /> },
       { path: "/FAQ", element: <FAQ /> },
@@ -29,7 +30,14 @@ const router = createBrowserRouter([
       { path: "/Sobre", element: <Sobre /> },
       { path: "/Login", element: <Login /> },
       { path: "/Registrar", element: <Registrar /> },
-      { path: "/formulario", element: <Formulario /> },
+      { 
+        path: "/formulario", 
+        element: (
+          <ProtectedRoute>
+            <Formulario />
+          </ProtectedRoute>
+        )
+      },
     ],
   },
 ]);
@@ -37,7 +45,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ProviderTema>
-      <RouterProvider router={router}/>
+      <AuthProvider>
+        <RouterProvider router={router}/>
+      </AuthProvider>
     </ProviderTema>
   </StrictMode>,
-)
+);
