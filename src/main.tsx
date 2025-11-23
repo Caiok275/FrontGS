@@ -12,6 +12,8 @@ import Sobre from './Routes/Sobre/Sobre.tsx'
 import { ProviderTema } from './context/TemaContext.tsx'
 import Login from './Routes/Login/Login.tsx'
 import Registrar from "./Routes/Registrar/Registrar";
+import Formulario from "./Routes/Formulario/Formulario";
+
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,7 @@ const router = createBrowserRouter([
       { path: "/Sobre", element: <Sobre /> },
       { path: "/Login", element: <Login /> },
       { path: "/Registrar", element: <Registrar /> },
+      { path: "/formulario", element: <Formulario /> },
     ],
   },
 ]);

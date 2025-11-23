@@ -29,7 +29,10 @@ export default function NavBarra() {
         <Link to="/sobre" className="hover:opacity-70 transition">Sobre</Link>
         <Link to="/integrantes" className="hover:opacity-70 transition">Integrantes</Link>
         <Link to="/faq" className="hover:opacity-70 transition">FAQ</Link>
+        <Link to="/formulario" className="hover:opacity-70 transition">Formulário</Link>
         <Link to="/contato" className="hover:opacity-70 transition">Contato</Link>
+
+        
       </nav>
 
       <div className="flex items-center gap-3">
