@@ -4,8 +4,9 @@ Projeto desenvolvido para a Global Solution, com foco em criar um projeto Front-
 
 ## Status do projeto - Concluído
 
-## Link Projeto Github
+## Link Projeto Github e deploy no Vercel
 https://github.com/Caiok275/FrontGS
+frontgs-iota.vercel.app
 
 ---
 Sumário
