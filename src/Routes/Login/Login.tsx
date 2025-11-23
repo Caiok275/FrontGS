@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTema } from "../../context/TemaContext";
-import { useAuth } from "../../context/AuthContext"; 
+import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -20,8 +20,22 @@ export default function Login() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (form.email === "" || form.senha === "") {
+    if (!form.email || !form.senha) {
       alert("Preencha todos os campos!");
+      return;
+    }
+
+    const usuarioSalvo = localStorage.getItem("usuarioRegistrado");
+
+    if (!usuarioSalvo) {
+      alert("Nenhum usuário registrado encontrado!");
+      return;
+    }
+
+    const usuario = JSON.parse(usuarioSalvo);
+
+    if (form.email !== usuario.email || form.senha !== usuario.senha) {
+      alert("Email ou senha incorretos!");
       return;
     }
 
@@ -29,7 +43,7 @@ export default function Login() {
 
     alert("Login realizado com sucesso!");
 
-    navigate("/formulario"); 
+    navigate("/formulario");
   }
 
   return (

@@ -1,17 +1,12 @@
 import { useState } from "react";
 import { useTema } from "../../context/TemaContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Registrar() {
   const { tema } = useTema();
+  const navigate = useNavigate();
 
-  interface Usuario {
-    nome: string;
-    email: string;
-    senha: string;
-    confirmarSenha: string;
-  }
-
-  const [dados, setDados] = useState<Usuario>({
+  const [dados, setDados] = useState({
     nome: "",
     email: "",
     senha: "",
@@ -19,105 +14,109 @@ export default function Registrar() {
   });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
-    setDados({ ...dados, [name]: value });
+    setDados({ ...dados, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (
+      dados.nome === "" ||
+      dados.email === "" ||
+      dados.senha === "" ||
+      dados.confirmarSenha === ""
+    ) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
     if (dados.senha !== dados.confirmarSenha) {
       alert("As senhas não coincidem!");
       return;
     }
+
+    localStorage.setItem(
+      "usuarioRegistrado",
+      JSON.stringify({
+        nome: dados.nome,
+        email: dados.email,
+        senha: dados.senha,
+      })
+    );
+
     alert("Cadastro realizado com sucesso!");
+
+    navigate("/login");
   }
 
   return (
     <div
       className={
         tema === "claro"
-          ? "w-full min-h-screen bg-gray-200 flex justify-center items-center p-4"
-          : "w-full min-h-screen bg-gray-800 text-white flex justify-center items-center p-4"
+          ? "w-full min-h-screen bg-gray-200 flex justify-center items-center p-6"
+          : "w-full min-h-screen bg-gray-900 text-white flex justify-center items-center p-6"
       }
     >
       <div
         className={
           tema === "claro"
-            ? "bg-white border-4 border-blue-800 rounded-xl p-10 w-[90%] max-w-lg shadow-lg"
-            : "bg-gray-900 border-4 border-yellow-400 rounded-xl p-10 w-[90%] max-w-lg shadow-lg"
+            ? "bg-white p-10 border-4 border-blue-800 rounded-xl w-full max-w-lg shadow-xl"
+            : "bg-gray-800 p-10 border-4 border-yellow-400 rounded-xl w-full max-w-lg shadow-xl"
         }
       >
         <h1
           className={
             tema === "claro"
-              ? "text-blue-900 text-3xl font-bold text-center mb-8"
-              : "text-yellow-300 text-3xl font-bold text-center mb-8"
+              ? "text-blue-900 text-3xl text-center font-bold mb-8"
+              : "text-yellow-300 text-3xl text-center font-bold mb-8"
           }
         >
           Criar Conta
         </h1>
 
-        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <input
             type="text"
             name="nome"
+            className="border-2 border-gray-400 rounded-md p-3"
             placeholder="Nome completo"
             value={dados.nome}
             onChange={handleChange}
-            className={
-              tema === "claro"
-                ? "border-2 border-gray-400 rounded-md p-3 text-lg bg-white text-black"
-                : "border-2 border-yellow-400 rounded-md p-3 text-lg bg-gray-800 text-white"
-            }
           />
 
           <input
             type="email"
             name="email"
+            className="border-2 border-gray-400 rounded-md p-3"
             placeholder="Email"
             value={dados.email}
             onChange={handleChange}
-            className={
-              tema === "claro"
-                ? "border-2 border-gray-400 rounded-md p-3 text-lg bg-white text-black"
-                : "border-2 border-yellow-400 rounded-md p-3 text-lg bg-gray-800 text-white"
-            }
           />
 
           <input
             type="password"
             name="senha"
+            className="border-2 border-gray-400 rounded-md p-3"
             placeholder="Senha"
             value={dados.senha}
             onChange={handleChange}
-            className={
-              tema === "claro"
-                ? "border-2 border-gray-400 rounded-md p-3 text-lg bg-white text-black"
-                : "border-2 border-yellow-400 rounded-md p-3 text-lg bg-gray-800 text-white"
-            }
           />
 
           <input
             type="password"
             name="confirmarSenha"
+            className="border-2 border-gray-400 rounded-md p-3"
             placeholder="Confirmar senha"
             value={dados.confirmarSenha}
             onChange={handleChange}
-            className={
-              tema === "claro"
-                ? "border-2 border-gray-400 rounded-md p-3 text-lg bg-white text-black"
-                : "border-2 border-yellow-400 rounded-md p-3 text-lg bg-gray-800 text-white"
-            }
           />
 
           <button
             type="submit"
-            className="bg-blue-700 text-white font-bold py-3 rounded-md hover:bg-blue-800 transition mt-4"
+            className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 rounded-md"
           >
             Registrar
           </button>
-
         </form>
       </div>
     </div>

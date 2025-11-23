@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, } from "react";
+import { createContext, useContext, useState,} from "react";
 import type { ReactNode } from "react";
 
 interface Usuario {
@@ -7,6 +7,7 @@ interface Usuario {
 
 interface AuthContextType {
   usuario: Usuario | null;
+  logado: boolean;
   login: (user: Usuario) => void;
   logout: () => void;
 }
@@ -14,9 +15,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [usuario, setUsuario] = useState<Usuario | null>(
-    () => JSON.parse(localStorage.getItem("usuario") || "null")
-  );
+  const [usuario, setUsuario] = useState<Usuario | null>(null);
 
   function login(user: Usuario) {
     setUsuario(user);
@@ -29,7 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ usuario, login, logout }}>
+    <AuthContext.Provider value={{ usuario, logado: !!usuario, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
